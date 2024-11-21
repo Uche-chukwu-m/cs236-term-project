@@ -3,7 +3,7 @@ import csv
 from datetime import datetime
 
 class EventTicketingSystem:
-    def __init__(self, vip_tickets=50, regular_tickets=100):
+    def __init__(self, vip_tickets=5, regular_tickets=5):
         self.vip_queue = queue.Queue()
         self.regular_queue = queue.Queue()
         self.vip_tickets = vip_tickets
@@ -58,8 +58,8 @@ class EventTicketingSystem:
         }
     
     def get_ticket_summary(self):
-        total_tickets = 50 + 100  # Initial total tickets
-        sold_tickets = (50 - self.vip_tickets) + (100 - self.regular_tickets)
+        total_tickets = 5 + 5  # Initial total tickets
+        sold_tickets = (5 - self.vip_tickets) + (5 - self.regular_tickets)
         
         with open(self.transaction_log, 'r') as file:
             reader = csv.reader(file)
